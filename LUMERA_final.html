@@ -1,0 +1,2400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luméra - Barrier Repair Serum | Skin, Simplified</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-cream: #fbf9f6;
+            --color-light-cream: #f5f3f0;
+            --color-pale: #efeeeb;
+            --color-border: #e4e2df;
+            --color-text-light: #625e56;
+            --color-text-dark: #444748;
+            --color-text-black: #000;
+            --color-white: #fff;
+            --color-backdrop: #eae8e5;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text-black);
+            background-color: var(--color-cream);
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+        }
+
+        .text-sm {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+        }
+
+        .text-label {
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 2.4px;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+        }
+
+        .text-body {
+            font-size: 15px;
+            font-weight: 300;
+            letter-spacing: 0.15px;
+            color: var(--color-text-dark);
+            line-height: 26px;
+        }
+
+        .text-description {
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 0.18px;
+            color: var(--color-text-dark);
+            line-height: 30px;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(251, 249, 246, 0.9);
+            backdrop-filter: blur(6px);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .header-announcement {
+            background: rgba(245, 243, 240, 0.5);
+            border-bottom: 1px solid rgba(228, 226, 223, 0.6);
+            text-align: center;
+            padding: 6px 0;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2.4px;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+        }
+
+        .header-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 64px;
+            max-width: 1440px;
+            margin: 0 auto;
+            gap: 40px;
+        }
+
+        .header-logo {
+            font-family: var(--font-display);
+            font-size: 24px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        .header-tagline {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+            padding-left: 17px;
+            border-left: 1px solid var(--color-border);
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .header-nav a {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 2.16px;
+            text-transform: uppercase;
+            color: var(--color-text-dark);
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .header-nav a:first-child {
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0;
+            color: var(--color-text-black);
+            border-bottom: 2px solid var(--color-text-black);
+            padding-bottom: 3px;
+        }
+
+        .header-nav a:hover {
+            color: var(--color-text-black);
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .btn-shop {
+            background: var(--color-text-black);
+            color: var(--color-white);
+            border: 1px solid var(--color-text-black);
+            padding: 9px 25px;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 1.92px;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-shop:hover {
+            background: var(--color-white);
+            color: var(--color-text-black);
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 0;
+        }
+
+        section {
+            scroll-margin-top: 160px;
+        }
+
+        /* Spacing */
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 64px;
+        }
+
+        .section-padding {
+            padding: 160px 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--color-cream);
+            border-bottom: 1px solid var(--color-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-watermark {
+            position: absolute;
+            top: 24px;
+            left: -15.35%;
+            right: -15.35%;
+            opacity: 0.04;
+            font-family: var(--font-display);
+            font-size: 320px;
+            font-weight: 400;
+            letter-spacing: 64px;
+            text-transform: uppercase;
+            line-height: 480px;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        .hero-header-info {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 12px 64px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(228, 226, 223, 0.6);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            padding-right: 24px;
+        }
+
+        .hero-badge {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .hero-badge-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--color-text-light);
+            border-radius: 50%;
+        }
+
+        .hero-h1 {
+            font-size: 80px;
+            font-weight: 400;
+            letter-spacing: -1.6px;
+            line-height: 88px;
+            margin-bottom: 24px;
+            max-width: 512px;
+        }
+
+        .hero-h1 .italic {
+            font-style: italic;
+            color: var(--color-text-light);
+        }
+
+        .hero-description {
+            max-width: 512px;
+            margin-bottom: 24px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            padding: 8px 0;
+        }
+
+        .btn-primary {
+            background: var(--color-text-black);
+            color: var(--color-white);
+            border: none;
+            padding: 24px 64px;
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 2.4px;
+            text-transform: uppercase;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-white);
+            color: var(--color-text-black);
+            border: 1px solid var(--color-text-black);
+        }
+
+        .hero-shipping-info {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.6px;
+            color: var(--color-text-light);
+        }
+
+        .hero-specs {
+            border-top: 1px solid var(--color-border);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            padding-top: 97px;
+            margin-top: 64px;
+        }
+
+        .spec-item {
+            display: flex;
+            flex-direction: column;
+            gap: 3.5px;
+        }
+
+        .spec-label {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+        }
+
+        .spec-value {
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.15px;
+            color: var(--color-text-black);
+            white-space: nowrap;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: flex-end;
+            height: 675px;
+        }
+
+        .hero-image-container {
+            background: var(--color-light-cream);
+            border: 1px solid var(--color-border);
+            padding: 24px;
+            aspect-ratio: 4 / 5;
+            max-width: 540px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-image-inner {
+            background: var(--color-pale);
+            overflow: hidden;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-image-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-badge {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            background: rgba(251, 249, 246, 0.95);
+            backdrop-filter: blur(2px);
+            padding: 15px 24px;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2.2px;
+            text-transform: uppercase;
+            color: var(--color-text-black);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Product Introduction Section */
+        .intro-section {
+            background: var(--color-light-cream);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .intro-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            align-items: flex-start;
+            padding-top: 160px;
+            padding-bottom: 161px;
+        }
+
+        .intro-text h2 {
+            font-size: 52px;
+            font-weight: 400;
+            letter-spacing: -0.52px;
+            line-height: 60px;
+            margin-bottom: 24px;
+        }
+
+        .intro-text-block {
+            max-width: 576px;
+            margin-bottom: 24px;
+        }
+
+        .architectural-panel {
+            background: var(--color-cream);
+            border: 1px solid var(--color-border);
+            padding: 41px;
+            max-width: 576px;
+        }
+
+        .architectural-panel h3 {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 400;
+            letter-spacing: 3.36px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .architectural-panel .text-sm {
+            font-size: 10px;
+        }
+
+        .intro-image-container {
+            background: var(--color-cream);
+            border: 1px solid var(--color-border);
+            padding: 17px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+        }
+
+        .image-box {
+            background: var(--color-pale);
+            border-radius: inherit;
+            overflow: hidden;
+            height: 386px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Section Headers */
+        .section-header {
+            margin-bottom: 96px;
+        }
+
+        .section-tag {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2.4px;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+            margin-bottom: 8px;
+        }
+
+        .section-h2 {
+            font-family: var(--font-display);
+            font-size: 52px;
+            font-weight: 400;
+            letter-spacing: -0.52px;
+            line-height: 60px;
+            margin-bottom: 8px;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            background: var(--color-cream);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .benefits-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--color-border);
+            margin-bottom: 96px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+
+        .benefit-item {
+            border-top: 1px solid var(--color-text-black);
+            padding-top: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 400px;
+        }
+
+        .benefit-item h3 {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 32px;
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+
+        .benefit-label {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+            margin-bottom: 16px;
+        }
+
+        .benefit-footer {
+            padding-top: 64px;
+            margin-top: 64px;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .benefit-footer .text-sm {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            background: var(--color-cream);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 96px;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .review-card {
+            background: var(--color-light-cream);
+            border: 1px solid var(--color-border);
+            padding: 65px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .review-quote {
+            font-family: var(--font-display);
+            font-size: 52px;
+            color: rgba(98, 94, 86, 0.4);
+            line-height: 60px;
+            margin-bottom: 6px;
+        }
+
+        .review-text {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 400;
+            letter-spacing: 0.22px;
+            line-height: 35.75px;
+            margin-bottom: 40px;
+        }
+
+        .review-author {
+            border-top: 1px solid var(--color-border);
+            padding-top: 25px;
+        }
+
+        .review-author-name {
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-text-black);
+            margin-bottom: 7px;
+        }
+
+        .review-author-location {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+        }
+
+        /* Why Luméra Section */
+        .why-section {
+            background: var(--color-pale);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .why-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            align-items: stretch;
+        }
+
+        .why-image {
+            background: var(--color-backdrop);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .why-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .why-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .why-image-caption {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            background: rgba(251, 249, 246, 0.9);
+            backdrop-filter: blur(2px);
+            padding: 8px 24px;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-text-black);
+        }
+
+        .why-text {
+            background: var(--color-cream);
+            padding: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .why-text h2 {
+            font-size: 52px;
+            font-weight: 400;
+            letter-spacing: -0.52px;
+            line-height: 60px;
+            margin-bottom: 24px;
+        }
+
+        .why-text h2 .italic {
+            font-style: italic;
+            color: var(--color-text-light);
+        }
+
+        .why-checklist {
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+            padding-top: 25px;
+            padding-bottom: 0;
+        }
+
+        .why-check-item {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            padding: 9px 0;
+            border-bottom: 1px solid rgba(228, 226, 223, 0.6);
+        }
+
+        .why-check-item:last-child {
+            border-bottom: none;
+        }
+
+        .check-line {
+            width: 8px;
+            height: 1px;
+            background: var(--color-text-black);
+            flex-shrink: 0;
+        }
+
+        /* Ingredients Section */
+        .ingredients-section {
+            background: var(--color-light-cream);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .ingredients-header {
+            max-width: 768px;
+            margin-bottom: 96px;
+        }
+
+        .ingredients-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 32px;
+        }
+
+        .ingredients-list {
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+            padding: 0;
+        }
+
+        .ingredient-item {
+            display: grid;
+            grid-template-columns: auto 1fr 1fr;
+            gap: 24px;
+            align-items: flex-start;
+            padding: 40px 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .ingredient-item:first-child {
+            padding-top: 0;
+        }
+
+        .ingredient-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .ingredient-number {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+            min-width: 60px;
+        }
+
+        .ingredient-name {
+            font-family: var(--font-display);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 44px;
+        }
+
+        .ingredient-benefit {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+        }
+
+        .ingredient-description {
+            grid-column: 3;
+        }
+
+        .ingredients-side {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .ingredient-card {
+            background: var(--color-cream);
+            border: 1px solid var(--color-border);
+            padding: 17px;
+        }
+
+        .ingredient-card-image {
+            background: var(--color-pale);
+            border-radius: inherit;
+            overflow: hidden;
+            height: 246.48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 0;
+        }
+
+        .ingredient-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .ingredient-card-text {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .ingredient-card-quote {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 400;
+            font-style: italic;
+            text-align: center;
+            color: var(--color-text-black);
+        }
+
+        .ingredient-card-note {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-align: center;
+            color: var(--color-text-light);
+        }
+
+        .ingredient-exclusions {
+            background: var(--color-pale);
+            border: 1px solid rgba(228, 226, 223, 0.6);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        /* How to Use Section */
+        .usage-section {
+            background: var(--color-cream);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .usage-header {
+            max-width: 672px;
+            margin-bottom: 96px;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-bottom: 96px;
+        }
+
+        .step-item {
+            border-top: 1px solid var(--color-text-black);
+            padding-top: 41px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 400px;
+        }
+
+        .step-item:nth-child(2) {
+            border-top-color: var(--color-border);
+        }
+
+        .step-item:nth-child(3) {
+            border-top-color: var(--color-border);
+        }
+
+        .step-number {
+            font-family: var(--font-display);
+            font-size: 80px;
+            font-weight: 300;
+            color: var(--color-border);
+            line-height: 80px;
+            margin-bottom: 0;
+            letter-spacing: -1.6px;
+        }
+
+        .step-item h3 {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 400;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            margin-top: 8px;
+        }
+
+        .step-footer {
+            padding-top: 64px;
+            margin-top: 64px;
+        }
+
+        .step-footer .text-sm {
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .usage-guideline {
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+            padding: 25px 0;
+            text-align: center;
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-style: italic;
+            color: var(--color-text-light);
+        }
+
+        /* Brand Story Section */
+        .story-section {
+            background: var(--color-light-cream);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .story-container {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 32px;
+            align-items: center;
+            padding: 160px 0;
+        }
+
+        .founder-image {
+            background: var(--color-cream);
+            border: 1px solid var(--color-border);
+            padding: 17px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+        }
+
+        .founder-image-inner {
+            background: var(--color-pale);
+            border-radius: inherit;
+            overflow: hidden;
+            height: 569.77px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .founder-image-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .founder-info {
+            border-top: 1px solid rgba(228, 226, 223, 0.6);
+            padding: 25px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .founder-name {
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-text-black);
+            margin-bottom: 3px;
+        }
+
+        .founder-title {
+            font-size: 13px;
+            color: var(--color-text-light);
+        }
+
+        .founder-location {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+        }
+
+        .story-text {
+            padding-left: 64px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .story-text h2 {
+            font-size: 52px;
+            font-weight: 400;
+            letter-spacing: -0.52px;
+            line-height: 60px;
+            margin-bottom: 40px;
+        }
+
+        .story-text-block {
+            max-width: 576px;
+            margin-bottom: 24px;
+        }
+
+        .story-quote {
+            border-top: 1px solid var(--color-border);
+            padding-top: 41px;
+            margin-top: 64px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .story-quote-text {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-style: italic;
+            color: var(--color-text-black);
+            line-height: 34px;
+        }
+
+        .story-quote-author {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--color-cream);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .faq-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 32px;
+            align-items: start;
+            padding: 160px 64px;
+        }
+
+        .faq-header {
+            max-width: 672px;
+        }
+
+        .faq-header h2 {
+            font-size: 52px;
+            font-weight: 400;
+            letter-spacing: -0.52px;
+            line-height: 60px;
+            margin-bottom: 16px;
+        }
+
+        .faq-description {
+            max-width: 672px;
+            margin-bottom: 37.5px;
+        }
+
+        .faq-link {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 2.16px;
+            text-transform: uppercase;
+            color: var(--color-text-black);
+            text-decoration: underline;
+            text-decoration-color: #c4c7c7;
+            cursor: pointer;
+        }
+
+        .faq-list {
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--color-border);
+            padding: 24px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 400;
+            color: var(--color-text-black);
+            white-space: nowrap;
+        }
+
+        .faq-toggle {
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .faq-toggle.open {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.3s ease;
+            padding-right: 24px;
+        }
+
+        .faq-answer.open {
+            max-height: 500px;
+            opacity: 1;
+            margin-top: 24px;
+        }
+
+        /* Final CTA Section */
+        .final-cta-section {
+            background: var(--color-pale);
+        }
+
+        .final-cta-container {
+            background: var(--color-cream);
+            border: 1px solid var(--color-border);
+            padding: 161px;
+            margin: 160px 64px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .final-cta-image {
+            background: var(--color-pale);
+            border: 1px solid var(--color-border);
+            padding: 17px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .final-cta-image-inner {
+            background: var(--color-light-cream);
+            overflow: hidden;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            max-width: 360px;
+            aspect-ratio: auto;
+        }
+
+        .final-cta-image-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .final-cta-text h2 {
+            font-size: 80px;
+            font-weight: 400;
+            letter-spacing: -1.6px;
+            line-height: 88px;
+            margin-bottom: 24px;
+        }
+
+        .final-cta-description {
+            max-width: 512px;
+            margin-bottom: 24px;
+        }
+
+        .final-cta-pricing {
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+            padding: 25px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 64px;
+        }
+
+        .pricing-left {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .product-name {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 400;
+            color: var(--color-text-black);
+        }
+
+        .product-details {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+        }
+
+        .pricing-right {
+            text-align: right;
+        }
+
+        .price {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 400;
+            color: var(--color-text-black);
+        }
+
+        .price-note {
+            font-size: 13px;
+            color: var(--color-text-light);
+        }
+
+        .final-cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .btn-large {
+            display: block;
+            text-decoration: none;
+            background: var(--color-text-black);
+            color: var(--color-white);
+            border: none;
+            padding: 24px;
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 2.88px;
+            text-transform: uppercase;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .btn-large:hover {
+            background: var(--color-white);
+            color: var(--color-text-black);
+            border: 1px solid var(--color-text-black);
+        }
+
+        .cta-benefits {
+            height: 52px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            position: relative;
+        }
+
+        .benefit-badge {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+            white-space: nowrap;
+        }
+
+        .benefit-badge-dot {
+            width: 6px;
+            height: 1px;
+            background: var(--color-text-light);
+            flex-shrink: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-light-cream);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .footer-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 64px;
+            position: relative;
+        }
+
+        .footer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 160px 0 97px 0;
+            border-bottom: 1px solid var(--color-border);
+            margin-bottom: 96px;
+        }
+
+        .footer-brand h1 {
+            font-size: 80px;
+            font-weight: 400;
+            letter-spacing: -1.6px;
+            line-height: 88px;
+            margin-bottom: 8px;
+        }
+
+        .footer-tagline {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-style: italic;
+            color: var(--color-text-light);
+            margin-bottom: 8px;
+        }
+
+        .footer-description {
+            max-width: 448px;
+        }
+
+        .footer-nav {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            padding: 64px 0 65px 0;
+            border-bottom: 1px solid var(--color-border);
+            margin-bottom: 65px;
+        }
+
+        .footer-section h3 {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-text-black);
+            margin-bottom: 16px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .footer-section a {
+            font-size: 13px;
+            color: var(--color-text-dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--color-text-black);
+        }
+
+        .footer-concierge {
+            font-size: 13px;
+            color: var(--color-text-dark);
+            margin-bottom: 8px;
+        }
+
+        .footer-email {
+            font-size: 15px;
+            color: var(--color-text-black);
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 0;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .footer-copyright {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+            color: var(--color-text-dark);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+            color: var(--color-text-dark);
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-text-black);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .container, .hero-container {
+                padding: 0 48px;
+            }
+
+            .benefits-grid, .reviews-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .header-main {
+                padding: 20px 48px;
+                gap: 20px;
+            }
+
+            .header-nav {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+
+            header {
+                position: static;
+                margin-top: 0;
+            }
+
+            main {
+                margin-top: 0;
+            }
+
+            section {
+                scroll-margin-top: 0;
+            }
+
+            .header-main {
+                display: grid;
+                grid-template-columns: auto 1fr auto;
+                padding: 14px 20px;
+                gap: 14px;
+                align-items: center;
+            }
+
+            .header-main > div:first-child {
+                min-width: 0;
+                gap: 10px !important;
+            }
+
+            .header-tagline {
+                display: none;
+            }
+
+            .header-nav {
+                display: none;
+            }
+
+            .header-cta {
+                width: auto;
+                flex-direction: row;
+            }
+
+            .btn-shop {
+                padding: 9px 12px;
+                font-size: 9px;
+                letter-spacing: 1.2px;
+            }
+
+            .container, .footer-container {
+                padding: 0 32px;
+            }
+
+            .hero-header-info {
+                padding: 10px 20px 14px;
+                gap: 12px;
+                flex-wrap: wrap;
+            }
+
+            .hero-header-info .text-sm {
+                font-size: 8px;
+                letter-spacing: 1.2px;
+            }
+
+
+            .hero-content, .intro-container, .why-container, .story-container {
+                grid-template-columns: 1fr !important;
+                gap: 24px;
+            }
+
+            .hero-h1 {
+                font-size: 48px;
+                line-height: 56px;
+            }
+
+            .section-h2 {
+                font-size: 36px;
+                line-height: 44px;
+            }
+
+            .section-padding {
+                padding: 80px 0;
+            }
+
+            .hero-content,
+            .intro-container,
+            .story-container,
+            .review-card {
+                min-height: 0;
+            }
+
+            .final-cta-container {
+                max-width: none;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+
+            .benefits-grid, .reviews-grid, .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefit-item, .step-item {
+                min-height: auto;
+                padding-top: 24px;
+            }
+
+            .review-card {
+                padding: 40px;
+            }
+
+            .ingredient-item {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .ingredient-description {
+                grid-column: 1;
+            }
+
+            .ingredients-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-container {
+                grid-template-columns: 1fr;
+                gap: 48px;
+                padding: 80px 32px;
+            }
+
+            .final-cta-container {
+                grid-template-columns: 1fr;
+                padding: 80px 32px;
+                margin: 80px 32px;
+            }
+
+            .story-text {
+                padding-left: 0;
+            }
+
+            .why-text {
+                padding: 64px 32px;
+            }
+
+            .footer-container {
+                padding: 0 32px;
+            }
+
+            .footer-header {
+                flex-direction: column;
+                gap: 32px;
+                align-items: flex-start;
+            }
+
+            .footer-nav {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 24px;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .final-cta-text h2 {
+                font-size: 48px;
+                line-height: 56px;
+            }
+
+            .hero-specs {
+                grid-template-columns: 1fr;
+                margin-top: 32px;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn-primary {
+                width: 100%;
+                text-align: center;
+            }
+
+            .pricing-left {
+                flex-direction: column;
+            }
+
+            .final-cta-pricing {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .pricing-right {
+                text-align: left;
+            }
+
+            .footer-brand h1 {
+                font-size: 48px;
+                line-height: 56px;
+            }
+        }
+
+        /* Figma alignment refinements */
+        .hero-content {
+            min-height: 675px;
+        }
+
+        .intro-container,
+        .story-container {
+            min-height: 640px;
+        }
+
+        .benefits-section .container,
+        .usage-section .container,
+        .ingredients-section .container {
+            min-height: 0;
+        }
+
+        .reviews-grid {
+            align-items: stretch;
+        }
+
+        .review-card {
+            min-height: 360px;
+        }
+
+        .final-cta-container {
+            max-width: 1312px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            opacity: 1;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-announcement">
+            COMPLIMENTARY FORMULATION SHIPPING ACROSS INDIA — PURE CLINICAL CLARITY
+        </div>
+        <div class="header-main">
+            <div style="display: flex; gap: 40px; align-items: center; flex: 1;">
+                <div class="header-logo">LUMÉRA</div>
+                <div class="header-tagline">SKIN, SIMPLIFIED.</div>
+            </div>
+            <nav class="header-nav">
+                <a href="#hero">THE SERUM</a>
+                <a href="#ingredients">INGREDIENTS</a>
+                <a href="#story">OUR STORY</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <div class="header-cta">
+                <a href="#final-cta" class="btn-shop">SHOP NOW — ₹1,499</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-watermark">LUMÉRA</div>
+            
+            <div class="hero-header-info">
+                <div class="text-sm">MONOGRAPH ED. 01 — REPAIR FORMULA</div>
+                <div class="text-sm">12.9716° N, 77.5946° E · BANGALORE</div>
+                <div class="text-sm">30 ML / 1.0 FL. OZ.</div>
+            </div>
+
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <div class="hero-badge-dot"></div>
+                        <span class="text-label" style="font-size: 12px; letter-spacing: 2.88px;">PURE BARRIER SUPPORT</span>
+                    </div>
+
+                    <h1 class="hero-h1">
+                        Your skin<br>
+                        doesn't need<br>
+                        more.<br>
+                        <span class="italic">It needs what<br>matters.</span>
+                    </h1>
+
+                    <div class="hero-description text-description">
+                        A lightweight daily serum designed to support the skin barrier and leave skin feeling calm, hydrated and comfortable.
+                    </div>
+
+                    <div class="hero-cta">
+                        <a href="#final-cta" class="btn-primary">SHOP NOW — ₹1,499</a>
+                        <div>
+                            <div class="hero-shipping-info">STANDARD DELIVERY INCLUDED</div>
+                            <div style="font-size: 13px; color: var(--color-text-light); line-height: 20px;">Complimentary shipping across<br>India</div>
+                        </div>
+                    </div>
+
+                    <div class="hero-specs">
+                        <div class="spec-item">
+                            <div class="spec-label">CONCENTRATE</div>
+                            <div class="spec-value">4 Actives</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">VOLUME</div>
+                            <div class="spec-value">₹1,499 · 30 ml</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">PROFILE</div>
+                            <div class="spec-value">pH 5.5 Balanced</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <div class="hero-image-container">
+                        <div class="hero-image-inner">
+                            <img src="https://www.figma.com/api/mcp/asset/ef2d57d3-04e8-47c7-950f-efceb1b60269.png" alt="Luméra Barrier Repair Serum 30ml" loading="lazy">
+                        </div>
+                        <div class="image-badge">BARRIER REPAIR SERUM · 30 ML</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Introduction -->
+        <section class="intro-section">
+            <div class="container intro-container">
+                <div class="intro-text">
+                    <div class="text-label">THE SERUM / 01</div>
+                    <h2>A simpler approach to<br>better skincare.</h2>
+
+                    <div class="intro-text-block text-description">
+                        Skincare shouldn't feel like a second job. Luméra Barrier Repair Serum brings together a considered blend of ceramides, panthenol, hyaluronic acid and centella extract in one lightweight daily formula.
+                    </div>
+
+                    <div class="intro-text-block text-description">
+                        No complicated routine. No overwhelming shelf. Just one thoughtful step between cleansing and moisturizing.
+                    </div>
+
+                    <div class="architectural-panel">
+                        <h3>CALM. HYDRATE. SUPPORT.</h3>
+                        <div class="text-sm" style="font-size: 10px; margin-top: 8px;">30 ML · LIGHTWEIGHT TEXTURE · DAILY USE · PH 5.5 BALANCED</div>
+                    </div>
+                </div>
+
+                <div class="intro-image-container">
+                    <div class="image-box">
+                        <img src="https://www.figma.com/api/mcp/asset/0eef2e00-0b70-4027-80f2-516ad542aecb.png" alt="Serum droplet macro" loading="lazy">
+                    </div>
+                    <div style="border-top: 1px solid rgba(228, 226, 223, 0.7); padding: 25px 8px 8px 8px; display: flex; justify-content: space-between; align-items: center; white-space: nowrap;">
+                        <div style="font-size: 10px; font-weight: 600; letter-spacing: 1.8px; text-transform: uppercase; color: var(--color-text-black);">PURE SUSPENDED HYDRATION</div>
+                        <div style="font-size: 13px; color: var(--color-text-light); font-style: italic; letter-spacing: 0.26px;">Micro-droplet formulation</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Benefits -->
+        <section class="benefits-section">
+            <div class="container" style="padding-top: 160px; padding-bottom: 161px;">
+                <div class="benefits-header">
+                    <div>
+                        <div class="text-label" style="margin-bottom: 8px;">EFFICACY THROUGH RESTRAINT</div>
+                        <h2 class="section-h2">Less complexity. More comfort.</h2>
+                    </div>
+                    <div style="max-width: 320px;">
+                        <div class="text-body" style="text-align: right;">Four distinct physiological vectors calibrated for immediate comfort and lasting barrier resilience.</div>
+                    </div>
+                </div>
+
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div>
+                            <div class="benefit-label">01 / BARRIER DEFENSE</div>
+                            <h3>Supports the skin<br>barrier</h3>
+                            <div class="text-body">Ceramides help support the skin's natural barrier and its innate ability to retain moisture throughout dry cycles.</div>
+                        </div>
+                        <div class="benefit-footer">
+                            <div class="text-sm">LIPID COMPLEX</div>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item" style="border-top-color: var(--color-border);">
+                        <div>
+                            <div class="benefit-label">02 / RESERVOIR</div>
+                            <h3>Multi-depth hydration</h3>
+                            <div class="text-body">Hyaluronic acid helps attract and retain moisture for hydrated-feeling skin that maintains suppleness all day.</div>
+                        </div>
+                        <div class="benefit-footer">
+                            <div class="text-sm">HUMECTANT FLUID</div>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item" style="border-top-color: var(--color-border);">
+                        <div>
+                            <div class="benefit-label">03 / SOOTHING</div>
+                            <h3>Skin equilibrium</h3>
+                            <div class="text-body">Centella extract and panthenol help create a soothing, comfortable skincare experience for sensitized skin.</div>
+                        </div>
+                        <div class="benefit-footer">
+                            <div class="text-sm">BOTANICAL EXTRACT</div>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item" style="border-top-color: var(--color-border);">
+                        <div>
+                            <div class="benefit-label">04 / TEXTURE</div>
+                            <h3>Lightweight by design</h3>
+                            <div class="text-body">A silky, non-sticky texture that layers easily into an everyday routine without piling or occlusive drag.</div>
+                        </div>
+                        <div class="benefit-footer">
+                            <div class="text-sm">FAST-ABSORBING</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Luméra -->
+        <section id="why" class="why-section">
+            <div class="container" style="padding: 0; display: grid; grid-template-columns: 1fr 1fr;">
+                <div class="why-image">
+                    <img src="https://www.figma.com/api/mcp/asset/ef2d57d3-04e8-47c7-950f-efceb1b60269.png" alt="Luméra Barrier Repair Serum" loading="lazy">
+                    <div class="why-image-overlay"></div>
+                    <div class="why-image-caption">ARCHIVE REF: 30-BRS-IND</div>
+                </div>
+
+                <div class="why-text">
+                    <div class="text-label" style="margin-bottom: 16px;">PURPOSEFUL FORMULATION</div>
+                    <h2 class="section-h2" style="margin-bottom: 40px;">
+                        Because<br>
+                        skincare got<br>
+                        complicated.<br>
+                        <span class="italic">We chose not<br>to.</span>
+                    </h2>
+
+                    <div class="text-description" style="margin-bottom: 24px;">
+                        More products don't always mean a better routine. Luméra was created around a simple idea: skincare should be thoughtful without becoming overwhelming.
+                    </div>
+
+                    <div class="why-checklist">
+                        <div style="font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 2.2px; margin-bottom: 16px;">ONE SERUM. A CONSIDERED ROUTINE.</div>
+                        <div class="why-check-item">
+                            <div class="check-line"></div>
+                            <div style="color: var(--color-text-black); font-size: 15px;">Lightweight texture</div>
+                        </div>
+                        <div class="why-check-item">
+                            <div class="check-line"></div>
+                            <div style="color: var(--color-text-black); font-size: 15px;">Non-sticky finish</div>
+                        </div>
+                        <div class="why-check-item">
+                            <div class="check-line"></div>
+                            <div style="color: var(--color-text-black); font-size: 15px;">Suitable for most skin types</div>
+                        </div>
+                        <div class="why-check-item">
+                            <div class="check-line"></div>
+                            <div style="color: var(--color-text-black); font-size: 15px;">Designed for daily use</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Reviews -->
+        <section class="reviews-section">
+            <div class="container" style="padding-top: 160px; padding-bottom: 161px;">
+                <div class="reviews-header">
+                    <div class="text-label" style="text-align: center;">VERIFIED IMPRESSIONS</div>
+                    <h2 class="section-h2" style="text-align: center;">Beautifully simple.</h2>
+                </div>
+
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div>
+                            <div class="review-quote">"</div>
+                            <div class="review-text">The texture is incredibly light and comfortable.</div>
+                        </div>
+                        <div class="review-author">
+                            <div class="review-author-name">RIYA</div>
+                            <div class="review-author-location">MUMBAI · VERIFIED PATRON</div>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div>
+                            <div class="review-quote">"</div>
+                            <div class="review-text">I love how simple the routine feels with this.</div>
+                        </div>
+                        <div class="review-author">
+                            <div class="review-author-name">MEERA</div>
+                            <div class="review-author-location">BANGALORE · VERIFIED PATRON</div>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div>
+                            <div class="review-quote">"</div>
+                            <div class="review-text">The packaging feels so premium and the serum is beautiful to use.</div>
+                        </div>
+                        <div class="review-author">
+                            <div class="review-author-name">SARAH</div>
+                            <div class="review-author-location">HYDERABAD · VERIFIED PATRON</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ingredients -->
+        <section id="ingredients" class="ingredients-section">
+            <div class="container" style="padding-top: 160px; padding-bottom: 161px;">
+                <div class="ingredients-header">
+                    <div class="text-label">FULL DISCLOSURE MONOGRAPH</div>
+                    <h2 class="section-h2">Nothing here is accidental.</h2>
+                    <div class="text-description">Four carefully selected ingredients. One uncomplicated formula.</div>
+                </div>
+
+                <div class="ingredients-grid">
+                    <div class="ingredients-list">
+                        <div class="ingredient-item">
+                            <div class="ingredient-number">01 / LIPIDS</div>
+                            <div>
+                                <h3 class="ingredient-name">Ceramides</h3>
+                                <div class="ingredient-benefit">BARRIER SUPPORT</div>
+                            </div>
+                            <div class="ingredient-description text-body">Support the skin barrier and help maintain moisture. Essential architectural building blocks that reinforce inter-cellular cement.</div>
+                        </div>
+
+                        <div class="ingredient-item">
+                            <div class="ingredient-number">02 / B5 VITAMIN</div>
+                            <div>
+                                <h3 class="ingredient-name">Panthenol</h3>
+                                <div class="ingredient-benefit">MOISTURE & CALM</div>
+                            </div>
+                            <div class="ingredient-description text-body">Known for its comforting and moisturizing properties. Rapidly converts to provitamin B5 upon contact with epidermal tissue.</div>
+                        </div>
+
+                        <div class="ingredient-item">
+                            <div class="ingredient-number">03 / HUMECTANT</div>
+                            <div>
+                                <h3 class="ingredient-name">Hyaluronic<br>Acid</h3>
+                                <div class="ingredient-benefit">MULTI-WEIGHT HYDRATION</div>
+                            </div>
+                            <div class="ingredient-description text-body">Helps attract and retain moisture for hydrated-feeling skin. Draws water molecules deep into the stratum corneum without tackiness.</div>
+                        </div>
+
+                        <div class="ingredient-item">
+                            <div class="ingredient-number">04 / BOTANICAL</div>
+                            <div>
+                                <h3 class="ingredient-name">Centella<br>Extract</h3>
+                                <div class="ingredient-benefit">SKIN COMFORT</div>
+                            </div>
+                            <div class="ingredient-description text-body">Known for its soothing, skin-comforting qualities. Ancient botanical extract traditionally utilized to restore equilibrium to distressed skin.</div>
+                        </div>
+                    </div>
+
+                    <div class="ingredients-side">
+                        <div class="ingredient-card">
+                            <div class="ingredient-card-image">
+                                <img src="https://www.figma.com/api/mcp/asset/0eef2e00-0b70-4027-80f2-516ad542aecb.png" alt="Serum macro detail" loading="lazy">
+                            </div>
+                            <div class="ingredient-card-text">
+                                <div class="ingredient-card-quote">"The formula is the focus."</div>
+                                <div class="ingredient-card-note">THE REST CAN STAY QUIET.</div>
+                            </div>
+                        </div>
+
+                        <div class="ingredient-exclusions">
+                            <div class="text-sm" style="font-size: 10px; margin-bottom: 4px;">STANDARD EXCLUSIONS</div>
+                            <div class="text-body" style="font-size: 13px;">Free from synthetic fragrances, drying alcohols, parabens, phthalates, and unnecessary texturizing fillers.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Use -->
+        <section class="usage-section">
+            <div class="container" style="padding-top: 160px; padding-bottom: 161px;">
+                <div class="usage-header">
+                    <div class="text-label">THE PROTOCOL</div>
+                    <h2 class="section-h2">Three drops. That's it.</h2>
+                    <div class="text-description">Your routine doesn't need another complicated step.</div>
+                </div>
+
+                <div class="steps-grid">
+                    <div class="step-item">
+                        <div>
+                            <div class="step-number">01</div>
+                            <h3>CLEANSE</h3>
+                            <div class="text-body">Start with freshly cleansed skin. Pat face gently with a dry linen towel, leaving skin mildly receptive.</div>
+                        </div>
+                        <div class="step-footer">
+                            <div class="text-sm">STAGE I</div>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div>
+                            <div class="step-number">02</div>
+                            <h3>APPLY</h3>
+                            <div class="text-body">Apply a few drops of Luméra Barrier Repair Serum to your face. Smooth over forehead, cheeks, and neck until absorbed.</div>
+                        </div>
+                        <div class="step-footer">
+                            <div class="text-sm">STAGE II</div>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div>
+                            <div class="step-number">03</div>
+                            <h3>MOISTURIZE</h3>
+                            <div class="text-body">Follow with your favorite moisturizer or sunscreen to seal in the hydrating lipid matrix.</div>
+                        </div>
+                        <div class="step-footer">
+                            <div class="text-sm">STAGE III</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="usage-guideline">
+                    "Morning or evening. Whenever your skin needs it."
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand Story -->
+        <section id="story" class="story-section">
+            <div class="container" style="padding: 0;">
+                <div class="story-container">
+                    <div class="founder-image">
+                        <div class="founder-image-inner">
+                            <img src="https://www.figma.com/api/mcp/asset/76581035-907e-4132-bcbc-060548afcc7d.png" alt="Ananya, founder of Luméra" loading="lazy">
+                        </div>
+                        <div class="founder-info">
+                            <div>
+                                <div class="founder-name">ANANYA</div>
+                                <div class="founder-title">Founder, Luméra</div>
+                            </div>
+                            <div class="founder-location">BANGALORE, INDIA</div>
+                        </div>
+                    </div>
+
+                    <div class="story-text">
+                        <div class="text-label">OUR ORIGIN & PHILOSOPHY</div>
+                        <h2 class="section-h2">"I felt skincare had<br>become unnecessarily<br>complicated."</h2>
+
+                        <div class="story-text-block text-description">
+                            Ten-step routines. Endless ingredients. Confusing claims. It became difficult to know what your skin actually needed.
+                        </div>
+
+                        <div class="story-text-block text-description">
+                            I wanted to create products that were simple, thoughtful and enjoyable to use — products that could earn their place in your routine rather than add to it. That's where Luméra came from.
+                        </div>
+
+                        <div class="story-quote">
+                            <div class="story-quote-text">— Ananya</div>
+                            <div style="display: flex; flex-direction: column; gap: 3px;">
+                                <div class="story-quote-author">FOUNDER OF LUMÉRA</div>
+                                <div style="font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--color-text-light);">EST. 2024</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="faq-section">
+            <div class="faq-container">
+                <div class="faq-header">
+                    <div class="text-label">CLARITY ARCHIVE</div>
+                    <h2 class="section-h2">Questions,<br>answered.</h2>
+                    <div class="text-body">Everything you need to know about our formula, application protocol, and shipping standards.</div>
+                    <div class="faq-link" onclick="scrollToElement('#final-cta')">DIRECT CONCIERGE INQUIRIES →</div>
+                </div>
+
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>What skin types is Luméra suitable for?</span>
+                            <div class="faq-toggle">+</div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="text-body">Luméra Barrier Repair Serum is formulated to be suitable for most skin types, including sensitive, dry, combination, and normal skin. The lightweight formula with ceramides, hyaluronic acid, and centella extract makes it a gentle yet effective option for daily use across different skin conditions.</div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>How often should I use it?</span>
+                            <div class="faq-toggle">+</div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="text-body">Luméra can be used twice daily—morning and evening—as part of your skincare routine. Apply a few drops after cleansing and before your moisturizer. Many users find that even using it once daily delivers noticeable results, so you can adjust frequency based on your skin's needs.</div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>When should I apply the serum?</span>
+                            <div class="faq-toggle">+</div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="text-body">Apply Luméra after cleansing but before moisturizing. This allows the serum to penetrate properly and create a foundation for your moisturizer. Pat your skin gently after cleansing (leaving it slightly damp helps with absorption) and apply a few drops of the serum, then follow with your regular moisturizer.</div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Does it feel sticky?</span>
+                            <div class="faq-toggle">+</div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="text-body">No, Luméra has a lightweight, silky texture that absorbs quickly without leaving a sticky residue. The formula is specifically designed to feel comfortable on the skin, making it ideal for layering under moisturizers or makeup without any occlusive drag or pilling.</div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>How much product is in the bottle?</span>
+                            <div class="faq-toggle">+</div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="text-body">Each bottle contains 30 ml (1.0 fl. oz.) of serum. This size is carefully calculated to provide approximately 2-3 months of daily use when applying a few drops per application, making it both economical and convenient.</div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Can I use it with my existing skincare routine?</span>
+                            <div class="faq-toggle">+</div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="text-body">Yes, Luméra is designed to integrate seamlessly into most skincare routines. Apply it after cleansing and before your regular moisturizer. It works well with other products and won't interfere with treatments like retinoids or vitamin C serums, though we recommend patch testing if you have very sensitive skin.</div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Where can I purchase Luméra?</span>
+                            <div class="faq-toggle">+</div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="text-body">Luméra Barrier Repair Serum is exclusively available through our website and shipped directly to you. We offer complimentary standard shipping across India with next-day dispatch from Bangalore. For bulk orders or special inquiries, please contact our concierge team at hello@lumera.in</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section id="final-cta" class="final-cta-section">
+            <div class="final-cta-container">
+                <div class="final-cta-image">
+                    <div class="final-cta-image-inner">
+                        <img src="https://www.figma.com/api/mcp/asset/ef2d57d3-04e8-47c7-950f-efceb1b60269.png" alt="Luméra Barrier Repair Serum product" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="final-cta-text">
+                    <div class="text-label">ACQUIRE THE MONOGRAPH</div>
+                    <h2>Make room<br>for<br>simpler<br>skincare.</h2>
+
+                    <div class="final-cta-description text-description">
+                        One thoughtful formula. Four considered ingredients. A routine that doesn't ask for much.
+                    </div>
+
+                    <div class="final-cta-pricing">
+                        <div class="pricing-left">
+                            <div class="product-name">Luméra Barrier Repair Serum</div>
+                            <div class="product-details">30 ML · COMPLIMENTARY SHIPPING</div>
+                        </div>
+                        <div class="pricing-right">
+                            <div class="price">₹1,499</div>
+                            <div class="price-note">Tax Included</div>
+                        </div>
+                    </div>
+
+                    <div class="final-cta-buttons">
+                        <a class="btn-large" href="#hero">SHOP LUMÉRA — ₹1,499</a>
+                        
+                        <div class="cta-benefits">
+                            <div class="benefit-badge">
+                                <div class="benefit-badge-dot"></div>
+                                <span>DISPATCHES NEXT DAY FROM BANGALORE</span>
+                            </div>
+                            <div class="benefit-badge" >
+                                <span>DERMATOLOGICALLY TESTED</span>
+                            </div>
+                            <div class="benefit-badge">
+                                <span>CRUELTY-FREE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-header">
+                <div class="footer-brand">
+                    <h1>LUMÉRA</h1>
+                    <div class="footer-tagline">"Skin, simplified."</div>
+                    <div class="footer-description text-body">Skincare made to bring a little more clarity to your routine. Restrained botanical chemistry paired with clinical concentration.</div>
+                </div>
+                <div style="flex: 1;"></div>
+            </div>
+
+            <div class="footer-nav">
+                <div class="footer-section">
+                    <h3>SHOP</h3>
+                    <ul>
+                        <li><a href="#hero">The Serum (30ml)</a></li>
+                        <li><a href="#hero">Subscription Archive</a></li>
+                        <li><a href="#hero">Formula Batch Index</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>EXPLORE</h3>
+                    <ul>
+                        <li><a href="#why">The Philosophy</a></li>
+                        <li><a href="#ingredients">Clinical Actives</a></li>
+                        <li><a href="#faq">Dermatology FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>FOLLOW</h3>
+                    <ul>
+                        <li><a href="#hero">Editorial Monograph</a></li>
+                        <li><a href="#hero">Dispatches</a></li>
+                        <li><a href="#hero">Spatial Gallery</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>CONCIERGE</h3>
+                    <div class="footer-concierge">Private consultations & order inquiries:</div>
+                    <a href="mailto:hello@lumera.in" class="footer-email">hello@lumera.in</a>
+                    <div class="text-sm" style="margin-top: 8px; color: var(--color-text-light);">BANGALORE, INDIA</div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-copyright">© 2026 LUMÉRA. ALL RIGHTS RESERVED. PRECISION SKINCARE LABORATORIES.</div>
+                <div class="footer-links">
+                    <a href="#footer">PRIVACY POLICY</a>
+                    <a href="#footer">TERMS OF SERVICE</a>
+                    <a href="#footer">FORMULATION TRANSPARENCY</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxZIYc4rcBjNkrKk1XpbqTXc88rT6FxluIO9gEU3HP_cwJKZ5Z5mJji7UODRMR30WMI/exec';
+
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const toggle = element.querySelector('.faq-toggle');
+            
+            // Close other open FAQs
+            document.querySelectorAll('.faq-answer.open').forEach(item => {
+                if (item !== answer) {
+                    item.classList.remove('open');
+                    item.previousElementSibling.querySelector('.faq-toggle').classList.remove('open');
+                }
+            });
+
+            // Toggle current FAQ
+            answer.classList.toggle('open');
+            toggle.classList.toggle('open');
+        }
+
+        function scrollToElement(selector) {
+            const element = document.querySelector(selector);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href && href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    scrollToElement(href);
+                }
+            });
+        });
+
+        // Add intersection observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Mobile menu toggle (if needed in future)
+        function handleMobileNav() {
+            const header = document.querySelector('header');
+            if (window.innerWidth <= 768) {
+                // Mobile adjustments handled by CSS media queries
+            }
+        }
+
+        window.addEventListener('resize', handleMobileNav);
+        handleMobileNav();
+    </script>
+</body>
+</html>
